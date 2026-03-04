@@ -1,0 +1,55 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             d:DesignWidth="800"
+             d:DesignHeight="450"
+             x:Class="Zachet.Views.ProductCard"
+             Background="{StaticResource Color.Background}">
+    <Grid Background="{StaticResource Color.Background}" Margin="12">
+        <Border Background="{StaticResource Color.AdditionalBackground}"
+                BorderBrush="{StaticResource Color.Accent}"
+                BorderThickness="1"
+                Padding="16 12">
+            <StackPanel Spacing="8">
+                <Grid ColumnDefinitions="*,Auto">
+                    <StackPanel Grid.Column="0" Orientation="Horizontal" Spacing="6">
+                        <TextBlock Text="Тип"
+                                   Foreground="{StaticResource Color.Accent}"
+                                   FontSize="22"
+                                   FontWeight="SemiBold" />
+                        <TextBlock Text="|"
+                                   Foreground="{StaticResource Color.Accent}"
+                                   FontSize="22"
+                                   FontWeight="SemiBold" />
+                        <TextBlock Text="Наименование продукта"
+                                   Foreground="{StaticResource Color.Accent}"
+                                   FontSize="22"
+                                   FontWeight="SemiBold" />
+                    </StackPanel>
+                    <TextBlock Grid.Column="1"
+                               Margin="24 0 0 0"
+                               VerticalAlignment="Center"
+                               Text="Время изготовления"
+                               Foreground="{StaticResource Color.Accent}"
+                               FontSize="18"
+                               FontWeight="SemiBold" />
+                </Grid>
+
+                <TextBlock Text="Артикул"
+                           Foreground="{StaticResource Color.Accent}"
+                           FontSize="16"
+                           FontWeight="SemiBold" />
+                <TextBlock Text="Минимальная стоимость для партнера"
+                           Foreground="{StaticResource Color.Accent}"
+                           FontSize="16"
+                           FontWeight="SemiBold" />
+                <TextBlock Text="Основной материал"
+                           Foreground="{StaticResource Color.Accent}"
+                           FontSize="16"
+                           FontWeight="SemiBold" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>
