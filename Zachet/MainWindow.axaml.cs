@@ -1,4 +1,5 @@
 using Avalonia.Controls;
+using Zachet.ViewModels;
 
 namespace Zachet
 {
@@ -7,6 +8,7 @@ namespace Zachet
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MainWindowViewModel();
         }
     }
 }

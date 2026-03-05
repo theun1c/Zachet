@@ -3,12 +3,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:components="clr-namespace:Zachet.Views"
+        xmlns:vm="clr-namespace:Zachet.ViewModels"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Zachet.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
         Title="Zachet">
-    <StackPanel Background="{StaticResource Color.Background}">
-        <components:ProductCard/>
-        <components:ProductCard/>
-        <components:ProductCard/>
-    </StackPanel>
+    <ScrollViewer Background="{StaticResource Brush.Background}">
+        <ItemsControl Margin="0 8 0 8" ItemsSource="{Binding Products}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <components:ProductCard />
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </ScrollViewer>
 </Window>

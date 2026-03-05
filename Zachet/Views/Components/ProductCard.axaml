@@ -2,10 +2,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:Zachet.ViewModels"
              mc:Ignorable="d"
              d:DesignWidth="800"
              d:DesignHeight="450"
              x:Class="Zachet.Views.ProductCard"
+             x:DataType="vm:ProductCardItem"
              Background="{StaticResource Color.Background}">
     <Grid Background="{StaticResource Color.Background}" Margin="12">
         <Border Background="{StaticResource Color.AdditionalBackground}"
@@ -15,7 +17,7 @@
             <StackPanel Spacing="8">
                 <Grid ColumnDefinitions="*,Auto">
                     <StackPanel Grid.Column="0" Orientation="Horizontal" Spacing="6">
-                        <TextBlock Text="Тип"
+                        <TextBlock Text="{Binding ProductType, FallbackValue=Тип}"
                                    Foreground="{StaticResource Color.Accent}"
                                    FontSize="22"
                                    FontWeight="SemiBold" />
@@ -23,7 +25,7 @@
                                    Foreground="{StaticResource Color.Accent}"
                                    FontSize="22"
                                    FontWeight="SemiBold" />
-                        <TextBlock Text="Наименование продукта"
+                        <TextBlock Text="{Binding ProductName, FallbackValue=Наименование продукта}"
                                    Foreground="{StaticResource Color.Accent}"
                                    FontSize="22"
                                    FontWeight="SemiBold" />
@@ -31,21 +33,21 @@
                     <TextBlock Grid.Column="1"
                                Margin="24 0 0 0"
                                VerticalAlignment="Center"
-                               Text="Время изготовления"
+                               Text="{Binding ProductionTime, FallbackValue=Время изготовления}"
                                Foreground="{StaticResource Color.Accent}"
                                FontSize="18"
                                FontWeight="SemiBold" />
                 </Grid>
 
-                <TextBlock Text="Артикул"
+                <TextBlock Text="{Binding Article, FallbackValue=Артикул}"
                            Foreground="{StaticResource Color.Accent}"
                            FontSize="16"
                            FontWeight="SemiBold" />
-                <TextBlock Text="Минимальная стоимость для партнера"
+                <TextBlock Text="{Binding MinPartnerPrice, FallbackValue=Минимальная стоимость для партнера}"
                            Foreground="{StaticResource Color.Accent}"
                            FontSize="16"
                            FontWeight="SemiBold" />
-                <TextBlock Text="Основной материал"
+                <TextBlock Text="{Binding MainMaterial, FallbackValue=Основной материал}"
                            Foreground="{StaticResource Color.Accent}"
                            FontSize="16"
                            FontWeight="SemiBold" />
